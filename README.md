@@ -1,16 +1,13 @@
-It's me, Tierney!
+It's me, Sem!
 
 # Usage
 
 ## npm
 ```
-npx bitandbang
+npx sempl
 ```
 
-## GitHub Package Registry
-Assuming you have the GitHub registry set up, you can use via npx:
-```
-npx @bnb/card
-```
+## Credit
 
-Not including how to use it globally because I'm not sure why you'd want this as a global command. That'd be creepy.
+Forked from [@bitandbang](https://github.com/bnb/bitandbang)
+Based on [Creating a business card for the terminal](https://dev.to/dailydevtips1/creating-a-business-card-for-the-terminal-3hel)
