@@ -3,6 +3,11 @@ import chalk from 'chalk';
 import boxen from 'boxen';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Define options for Boxen
 const options = {
@@ -13,33 +18,29 @@ const options = {
 
 // Text + chalk definitions
 const data = {
-	name: chalk.white('           Tierney Cyren'),
-	handle: chalk.white('bitandbang'),
-	shorthandle: chalk.white('bnb'),
-	work: chalk.white('Principal Developer Advocate at Twilio (::)'),
-	twitter: chalk.gray('https://twitter.com/') + chalk.cyan('bitandbang'),
-	mastodon: chalk.gray('https://mastodon.social/') + chalk.magenta('@bnb'),
-	npm: chalk.gray('https://npmjs.com/') + chalk.red('~bnb'),
-	github: chalk.gray('https://github.com/') + chalk.green('bnb'),
-	linkedin: chalk.gray('https://linkedin.com/in/') + chalk.blue('bitandbang'),
-	web: chalk.cyan('https://bnb.im'),
-	npx: `${chalk.red('npx')} ${chalk.white('bitandbang')}`,
-	labelWork: chalk.white.bold('    Work:'),
-	labelTwitter: chalk.white.bold(' Twitter:'),
-	labelMastodon: chalk.white.bold('Mastodon:'),
-	labelnpm: chalk.white.bold('     npm:'),
-	labelGitHub: chalk.white.bold('  GitHub:'),
-	labelLinkedIn: chalk.white.bold('LinkedIn:'),
-	labelWeb: chalk.white.bold('     Web:'),
-	labelCard: chalk.white.bold('    Card:'),
+	name: chalk.white('           Sem Plaatsman'),
+	handle: chalk.white('sempl'),
+	studies: chalk.white('BSc CS Student @ Inholland Haarlem'),
+	interests: chalk.white('Cloud Computing, AI, Security'),
+	npm: chalk.gray('https://npmjs.com/') + chalk.red('~sempl'),
+	github: chalk.gray('https://github.com/') + chalk.green('SemPlaatsman'),
+	linkedin: chalk.gray('https://linkedin.com/in/') + chalk.blue('sem-plaatsman'),
+	web: chalk.cyan('https://semplaatsman.nl'),
+	npx: `${chalk.red('npx')} ${chalk.white('sempl')}`,
+	labelStudies: chalk.white.bold('  Studies:'),
+	labelInterests: chalk.white.bold('Interests:'),
+	labelnpm: chalk.white.bold('      npm:'),
+	labelGitHub: chalk.white.bold('   GitHub:'),
+	labelLinkedIn: chalk.white.bold(' LinkedIn:'),
+	labelWeb: chalk.white.bold('      Web:'),
+	labelCard: chalk.white.bold('     Card:'),
 };
 
 // Actual strings we're going to output
 const newline = '\n';
-const heading = `${data.name} / ${data.handle} / ${data.shorthandle}`;
-const working = `${data.labelWork}  ${data.work}`;
-const twittering = `${data.labelTwitter}  ${data.twitter}`;
-const mastodoning = `${data.labelMastodon}  ${data.mastodon}`;
+const heading = `${data.name} / ${data.handle}`;
+const studiesing = `${data.labelStudies}  ${data.studies}`;
+const interestsing = `${data.labelInterests}  ${data.interests}`;
 const npming = `${data.labelnpm}  ${data.npm}`;
 const githubing = `${data.labelGitHub}  ${data.github}`;
 const linkedining = `${data.labelLinkedIn}  ${data.linkedin}`;
@@ -51,12 +52,10 @@ const output =
 	heading + // data.name + data.handle
 	newline +
 	newline + // Add one whole blank line
-	working +
-	newline + // data.labelWork + data.work
-	twittering +
-	newline + // data.labelTwitter + data.twitter
-	mastodoning +
-	newline + // data.labelTwitter + data.twitter
+	studiesing +
+	newline + // data.labelStudies + data.studies
+	interestsing +
+	newline + // data.labelInterests + data.interests
 	npming +
 	newline + // data.labelnpm + data.npm
 	githubing +
@@ -69,6 +68,6 @@ const output =
 	carding; // data.labelCard + data.npx
 
 writeFileSync(
-	join(import.meta.dirname, 'bin/output'),
+	join(__dirname, 'bin/output'),
 	chalk.green(boxen(output, options)),
 );

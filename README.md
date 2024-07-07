@@ -1,12 +1,14 @@
-It's me, Sem!
 This is my NPX Business Card repository.
 
 # Usage
 
-## npm
+## Terminal
 ```
 npx sempl
 ```
+
+## <span title="Taken @ 8-7-2024">Result</span>
+![Screenshot](snapshot.png)
 
 ## Credit
 
