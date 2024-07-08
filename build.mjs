@@ -22,17 +22,17 @@ const data = {
 	handle: chalk.white('sempl'),
 	studies: chalk.white('BSc CS Student @ Inholland Haarlem'),
 	interests: chalk.white('Cloud Computing, AI, Security'),
-	npm: chalk.gray('https://npmjs.com/') + chalk.red('~sempl'),
 	github: chalk.gray('https://github.com/') + chalk.green('SemPlaatsman'),
 	linkedin: chalk.gray('https://linkedin.com/in/') + chalk.blue('sem-plaatsman'),
-	web: chalk.cyan('https://semplaatsman.nl'),
+	web: chalk.gray('https://') + chalk.cyan('semplaatsman.nl'),
+	email: chalk.cyan('hello@semplaatsman.nl'),
 	npx: `${chalk.red('npx')} ${chalk.white('sempl')}`,
 	labelStudies: chalk.white.bold('  Studies:'),
 	labelInterests: chalk.white.bold('Interests:'),
-	labelnpm: chalk.white.bold('      npm:'),
 	labelGitHub: chalk.white.bold('   GitHub:'),
 	labelLinkedIn: chalk.white.bold(' LinkedIn:'),
 	labelWeb: chalk.white.bold('      Web:'),
+	labelEmail: chalk.white.bold('    Email:'),
 	labelCard: chalk.white.bold('     Card:'),
 };
 
@@ -41,10 +41,10 @@ const newline = '\n';
 const heading = `${data.name} / ${data.handle}`;
 const studiesing = `${data.labelStudies}  ${data.studies}`;
 const interestsing = `${data.labelInterests}  ${data.interests}`;
-const npming = `${data.labelnpm}  ${data.npm}`;
 const githubing = `${data.labelGitHub}  ${data.github}`;
 const linkedining = `${data.labelLinkedIn}  ${data.linkedin}`;
 const webing = `${data.labelWeb}  ${data.web}`;
+const emailing = `${data.labelEmail}  ${data.email}`;
 const carding = `${data.labelCard}  ${data.npx}`;
 
 // Put all our output together into a single variable so we can use boxen effectively
@@ -56,15 +56,15 @@ const output =
 	newline + // data.labelStudies + data.studies
 	interestsing +
 	newline + // data.labelInterests + data.interests
-	npming +
-	newline + // data.labelnpm + data.npm
 	githubing +
 	newline + // data.labelGitHub + data.github
 	linkedining +
 	newline + // data.labelLinkedIn + data.linkedin
 	webing +
-	newline +
 	newline + // data.labelWeb + data.web
+	emailing + 
+	newline + // data.labelEmail + data.email
+	newline + 
 	carding; // data.labelCard + data.npx
 
 writeFileSync(
