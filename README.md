@@ -4,7 +4,7 @@ This is my NPX Business Card repository.
 
 ## Terminal
 ```
-npx sempl
+npx sempl@latest
 ```
 
 ## <span title="Taken @ 8-7-2024">Result</span>
